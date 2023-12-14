@@ -17,8 +17,8 @@ public class StockService {
     /**
      * 재고 감소 기능
      */
-    @Transactional
-    public void decrease(Long id, Long quantity) {
+//    @Transactional
+    public synchronized void decrease(Long id, Long quantity) {
         // Stokc 조회
         Stock stock = stockRepository.findById(id).orElseThrow();
 
